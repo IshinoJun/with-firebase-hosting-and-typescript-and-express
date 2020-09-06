@@ -4,7 +4,7 @@
   "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
   "engines": {
     "node": "10"
-  },  
+  },
   "scripts": {
     "dev": "nodemon",
     "preserve": "yarn clean && yarn build-public && yarn build-functions && yarn build-app && yarn copy-deps && yarn install-deps",
@@ -29,11 +29,44 @@
     "@deboxsoft/cpx": "^1.5.0",
     "@types/node": "^14.6.4",
     "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "axios": "^0.20.0",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
     "firebase-functions-test": "^0.1.6",
     "firebase-tools": "^8.6.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.3.0",
     "nodemon": "^2.0.4",
+    "prettier": "^2.1.1",
     "rimraf": "^3.0.2",
+    "sass": "^1.26.10",
+    "stylelint": "^13.7.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
     "typescript": "^4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "src/**/*.{css,scss}": [
+      "stylelint --fix",
+      "git add"
+    ]
   },
   "license": "MIT"
 }

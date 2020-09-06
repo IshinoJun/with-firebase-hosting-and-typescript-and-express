@@ -1,0 +1,51 @@
+{
+  "overrides": [
+    {
+      "env": {
+        "es2017": true,
+        "node": true
+      },
+      "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+      "files": [
+        "firebaseFunctions.js",
+        "next.config.js"
+      ],
+      "rules": {
+        "@typescript-eslint/ban-types": ["off"]
+      }
+    },
+    {
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "prettier/@typescript-eslint",
+        "prettier/react"
+      ],
+      "files": [
+        "packages/**/*.ts",
+        "packages/**/*.tsx",
+        "src/**/*.ts",
+        "src/**/*.tsx"
+      ],
+      "parserOptions": {
+        "project": "tsconfig.json"
+      },
+      "rules": {
+        "no-console": "error",
+        "react/prop-types": "off",
+        // Maybe it will take effort to fix.
+        "@typescript-eslint/ban-types": ["off"]
+      },
+      "settings": {
+        "react": {
+          "version": "detect"
+        }
+      }
+    }
+  ],
+  "root": true
+}
