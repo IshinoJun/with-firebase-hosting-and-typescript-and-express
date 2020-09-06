@@ -1,20 +1,23 @@
 {
-  "hosting": {
-    "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "nextjsFunc"
-      }
+  "functions": {
+    "source": "dist/functions",
+    "predeploy": [
+      "yarn clean",
+      "yarn typecheck-app",
+      "yarn build-app",
+      "yarn build-functions",
+      "yarn copy-deps",
+      "yarn install-deps"
     ]
   },
-  "functions": {
-    "source": ".",
-    "predeploy": [
-      "npm --prefix \"$PROJECT_DIR\" install",
-      "npm --prefix \"$PROJECT_DIR\" run build"
+  "hosting": {
+    "public": "dist/public",
+    "rewrites": [
+      {
+        "source": "**/**",
+        "function": "hosting"
+      }
     ],
-    "runtime": "nodejs10"
+    "predeploy": "yarn build-public"
   }
 }

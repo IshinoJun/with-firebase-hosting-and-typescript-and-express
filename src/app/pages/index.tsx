@@ -1,9 +1,12 @@
 import App from '../components/App'
+import { NextPage } from 'next'
 
-export default function Home() {
+const HomeIndex: NextPage = () => {
   return (
     <App>
       <p>Index Page</p>
     </App>
   )
 }
+
+export default HomeIndex;
