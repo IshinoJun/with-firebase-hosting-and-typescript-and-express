@@ -1,5 +1,5 @@
 {
-  "name": "with-firebase-hosting-and-typescript-and-express",
+  "name": "yurumon",
   "version": "5.0.0",
   "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
   "engines": {
