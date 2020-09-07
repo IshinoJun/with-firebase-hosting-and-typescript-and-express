@@ -2,6 +2,7 @@
   "rules": {
     "selector-class-pattern": "^[0-9a-z\\-]+$",
     "block-opening-brace-space-before": "always",
+    "at-rule-no-unknown": null,
     "rule-empty-line-before": [
       "always",
       {
